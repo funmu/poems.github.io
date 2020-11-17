@@ -1,0 +1,58 @@
+# Empty CSS file for your own CSS
+
+:root {
+  --dark-sienna: #3c0919;
+  --middle-orange: #303080;
+  --red-crayola: #ff0054;
+
+  --main-color: var(--red-crayola);
+  --main-background: rose;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+body {
+  font-family: Balsamiq Sans;
+  padding-top: 90px;
+  background-color: var(--cyan);
+  color: var(--black);
+}
+
+.st-navbar {
+  font-size: 1.4em;
+  margin-bottom: 60px;
+}
+
+#logo {
+  width: 40px;
+  height: 40px;
+}
+
+#logo-big {
+  width: 150px;
+  height: 150px;
+}
+
+#aboutus {
+  background-color: wheat;
+  padding: 50px 10px 50px 10px;
+}
+
+.poem-item {
+  font-size: 1.1em;
+}
+
+.poem-item .header {
+  font-size: 1.1em;
+  margin-top: 20px;
+}
+
+.poem-item .poem-audio {
+  font-size: 0.8em;
+  margin-left: 30px;
+}
+
+.poem-item img {
+  height: 160px;
+  weight: 160px;
+  border-radius: 20%;
+}
