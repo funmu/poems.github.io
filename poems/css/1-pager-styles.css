@@ -1,0 +1,67 @@
+/*
+  1-pager-style.css
+
+  updated styles for my poems collection
+*/
+
+:root {
+  --dark-sienna: #3c0919;
+  --middle-orange: #303080;
+  --red-crayola: #ff0054;
+
+  --minion-yellow: #F4DC52;
+  --ruby-red: #9A031E;
+  --pink-lace: #FFD5FF;
+  --turquoise: #45F0DF;
+  --dark-jungle-green: #172121;
+
+  --main-color: var(--red-crayola);
+  --main-background: rose;
+
+  --main-color: var(--dark-jungle-green);
+  --header-background: var(--minion-yellow);
+  --box-border-color: var(--ruby-red);
+}
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+body {
+  font-family: Josefin Sans !important!;
+  padding-top: 60px;
+  background-color: var(--cyan);
+  color: var(--main-color) !important;
+}
+
+.title {
+  background-color: var(--header-background);
+}
+
+.title h1 {
+  font-size: 3em !important;
+  padding-left: 20px;
+}
+
+.choices-made {
+  text-align: center;
+  font-size: 1.3em !important;
+}
+
+.my-content .row {
+  margin-bottom: 30px;
+}
+.my-content h1 {
+  font-size: 2em;
+}
+
+.my-content h2 {
+  font-size: 1.6em;
+}
+
+.choice-details  {
+  padding: 10px;
+  text-align: left;
+  border-radius: 4px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--box-border-color);
+}
