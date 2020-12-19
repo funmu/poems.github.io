@@ -1,0 +1,190 @@
+<html> <!-- HTML5 document type -->
+<head>
+  <title>My Poems Collection - Site Map</title>
+
+  <meta charset="utf-8"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+
+  <link href="css/1-pager-styles.css" rel="stylesheet"></link>
+  <link href="css/2-sitemap-styles.css" rel="stylesheet"></link>
+  <link rel="icon" href="images/logo1.jpg" />
+
+  <meta name="description" content="Site Map for my Collection of Poems."></meta>
+  <meta name="author" content="Murali Krishnan"></meta>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    rel="stylesheet"   crossorigin="anonymous"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z">
+    </link>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
+
+  <script src="https://unpkg.com/gojs/release/go-debug.js"></script>
+</head>
+
+
+<body id="root">
+  <div class="container my-content">
+    <div class="row title">
+      <h1>mypoems.collections.org - sitemap</h1>
+    </div>
+    <div class="row header">
+      <div class="col-2 center">
+        <img class="logo" src="images/logo1.jpg"/>
+      </div>
+      <div class="col-2">This is the HEADER</div>
+      <div class="col-auto ml-auto">
+        <ul class="style-nav-header">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#collections">Collections</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+    </div>
+    <h3>Site Map </h3>
+    <div class="row">
+      <!-- The DIV for a Diagram needs an explicit size or else we will not see anything.
+           In this case we also add a background color so we can see that area. -->
+      <div id="mySiteMap" class="site-map">
+      </div>
+    </div>
+    <div class="row choices-made">
+      <div class="col-4 center">
+          <h1>Heading Font</h1>
+          <h3>Subheading Font</h3>
+          <p>Text Font</p>
+      </div>
+      <div class="col-7 choice-details">
+          <h3>Poems Collection Site</h1>
+          <p>This is a portfolio site for the poems I collect.</p>
+          <p>I chose this font <i>Josefin Sans</i> to bring elegance,
+            a geometric, and modern font but with an added vintage feeling.
+            It works well at larger sizes.
+            <br/> I use different font-sizes for heading, subheading, and content.
+          </p>
+          <p>The colors are chosen to bring brightness and energy to have the poems uplift our outlook.
+            The main content is in a variant of green called <i>dark jungle green</i> (last color)
+            that provides depth and contrast to other ligher colors used.
+          </p>
+      </div>
+    </div>
+    <div class="row media-items">
+      <div class="col-4 center">
+        <img src="images/1-pager-poems-colors.png" width="80%" height="250px" alt="colors chosen"/>
+        <p>Colors Chosen</p>
+      </div>
+      <div class="col-4 center">
+        <img src="images/TowardsLight_Nov2020.jpg" width="80%" height="250px" alt="colors chosen"/>
+        <p>Towards Light - for motivational poem</p>
+      </div>
+      <div class="col-4 center">
+        <img src="images/BirthdayCake-Nov2020.jpg" width="80%" height="250px" alt="colors chosen"/>
+        <p>Birthday Cake - a celebratory poem</p>
+      </div>
+    </div>
+  </div>
+
+
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous">
+  </script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous">
+  </script>
+
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous">
+  </script>
+
+  <script>
+  // Craft the diagram to show
+  var $g = go.GraphObject.make;
+  var myDiagram =
+    $g(go.Diagram, "mySiteMap",
+      { // enable Ctrl-Z to undo and Ctrl-Y to redo
+        "undoManager.isEnabled": true
+      });
+
+    // define a TreeLayout that flows from top to bottom
+    myDiagram.layout =
+      $g(go.TreeLayout,
+        { angle: 90, layerSpacing: 35 });
+
+    // define a Link template that routes orthogonally, with no arrowhead
+    myDiagram.linkTemplate =
+      $g(go.Link,
+        // default routing is go.Link.Normal
+        // default corner is 0
+        { routing: go.Link.Orthogonal, corner: 5 },
+        // the link path, a Shape
+        $g(go.Shape, { strokeWidth: 2, stroke: "#555" })
+
+        // if we wanted an arrowhead we would also add another Shape with toArrow defined:
+        // $(go.Shape, { toArrow: "Standard", stroke: null }
+        );
+
+    myDiagram.nodeTemplate =
+      $g(go.Node, "Vertical", // second argument of a Node (or any Panel) can be a Panel type
+        /* set Node properties here */
+        { // the Node.location point will be at the center of each node
+          locationSpot: go.Spot.Center,
+          background: "blue",
+          width: 100, height: 100
+        },
+
+        /* add GraphObjects contained within the Node */
+        // this Shape will be vertically above the TextBlock
+        $g(go.Shape,
+          "RoundedRectangle", // string argument can name a predefined figure
+          { /* set Shape properties here */
+            margin: 10, width: 40, height: 40, fill: "yellow"
+          },
+          // example Shape binding sets Shape.figure to the value of Node.data.fig
+          // new go.Binding("figure", "fig")
+        ),
+
+        $g(go.TextBlock,
+          "default text",  // string argument can be initial text string
+          { /* set TextBlock properties here */
+            margin: 12, stroke: "white", font: "bold 14px sans-serif"
+          },
+          // example TextBlock binding sets TextBlock.text to the value of Node.data.text
+          new go.Binding("text", "name"))
+      );
+
+    var myModel = $g(go.TreeModel);
+    // for each object in this Array, the Diagram creates a Node to represent it
+    myModel.nodeDataArray = [
+      { key: "1", name: "Home" },
+      { key: "2", parent: "1", name: "Collections" },
+      { key: "3", parent: "2", name: "My Poems" },
+      { key: "4", parent: "2", name: "Other Poems" },
+      { key: "11", parent: "2", name: "More Poems" },
+      { key: "5", parent: "1", name: "Blog" },
+      { key: "51", parent: "5", name: "Posts" },
+      { key: "6", parent: "1", name: "About"},
+      { key: "61", parent: "6", name: "Contact"}
+    ];
+    myDiagram.model = myModel;
+  </script>
+
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-68421266-1', 'auto');
+       ga('send', 'pageview');
+  </script>
+</body>
+</html>

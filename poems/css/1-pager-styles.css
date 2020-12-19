@@ -9,6 +9,7 @@
   --middle-orange: #303080;
   --red-crayola: #ff0054;
 
+  /* color chosen : https://coolors.co/9a031e-f4dc52-ffd5ff-45f0df-172121 */
   --minion-yellow: #F4DC52;
   --ruby-red: #9A031E;
   --pink-lace: #FFD5FF;
@@ -43,7 +44,7 @@ body {
 
 .choices-made {
   text-align: center;
-  font-size: 1.3em !important;
+  font-size: 1.1em !important;
 }
 
 .my-content .row {
