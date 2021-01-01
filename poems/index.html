@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
 
-  <link href="css/styles.css" rel="stylesheet"></link>
-
   <meta name="description" content="Murali's Poems are a collection of poems and songs."></meta>
   <meta name="author" content="Murali Krishnan"></meta>
 
@@ -19,10 +17,12 @@
     rel="stylesheet"   crossorigin="anonymous"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z">
     </link>
+  <link href="css/styles.css" rel="stylesheet"></link>
 
 </head>
+<!-- Get the poem text from external file using async methods -->
 
-<body id="root">
+<body id="root2">
   <nav class="navbar navbar-expand-lg navbar-light fixed-top st-navbar"
     style="background-color: wheat;">
     <div class="container-fluid">
@@ -63,7 +63,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="https://zanavu.com/blog">Blog</a>
+            <a class="nav-link" href="https://zanavu.com/notes">Blog</a>
           </li>
 
           <li class="nav-item dropdown ml-md-auto">
@@ -91,230 +91,18 @@
 <div class="container">
   <div id="poems" class="jumbotron">
     <div class="row">
-      <div class="col-6 col-sm-4">
-        <p>
-          <ul class="nav nav-pills">
+      <div class="col-6 col-sm-4 d-flex justify-content-center">
+        <ul class="nav nav-pills" id="sidebar_links">
+          <!-- the sidebar items will be dynamically added -->
 
-            <li class="nav-item poem-item">
-              <a class="nav-link"
-                role="toggle" data-toggle="tab"
-                href="#poem_towards_light">
-                <div class="header">Towards Lights <br/>(Happy Diwali)</div>
-                <img src="images/TowardsLight_Nov2020.jpg"
-                  width=200 height=200
-                  alt="Towards Light"/>
-              </a>
-            </li>
-
-            <li class="nav-item poem-item">
-              <a class="nav-link"
-                role="toggle" data-toggle="tab"
-                href="#poem_wonder_pack">
-                <div class="header">Wonder Pack</div>
-                <img src="images/WonderPack-Nov2020.jpg"
-                  width=200 height=200
-                  alt="Wonder Pack"/>
-              </a>
-            </li>
-
-            <li class="nav-item poem-item">
-              <a class="nav-link"
-                role="toggle" data-toggle="tab"
-                href="#poem_birthday_wishes">
-                <div class="header">Birthday Wishes<br/>&nbsp;For my Wife</div>
-                <img src="images/BirthdayCake-Nov2020.jpg"
-                  width=200 height=200
-                  alt="Birthday Cake"/>
-              </a>
-              <p class="poem-audio">Listen
-                <a href="https://soundcloud.com/murali-krishnan-893961838/birthday-song-for-my-wife/s-pw8W4ALWX1L">
-                on SoundCloud</a>
-              </p>
-            </li>
-
-          </ul>
-        </p>
+        </ul>
       </div>
 
       <hr/>
-      <div class="tab-content col-sm-8">
+      <div class="tab-content col-sm-8" id="main_content">
+        <!-- the main content items will be dynamically added -->
 
-        <div id="poem_birthday_wishes" role="tabpanel" class="tab-pane fade">
-<pre>
- Birthday Wishes For my Wife
-——— ——— ——— ——— ——— ——— ——— ———
-
-Hey Dear, My Dear wife!
-it is a wonderful day!
-It is your day!
-It is your birthday!
-
-Here is a sweet cake
- reminding us
-of the sweet family we make!
-
-Dreams you have
- may be reams of them.
-Wishes I have, reams of them;
- for your dreams to come true!
-
-( Hey Dear, My Dear wife!)
-
-Life is an adventure;
- a wanderer like me can be easily lost.
-Instead here you are,
- engaged with your love and care.
-
-It may seems like miles
- that I want to travel.
-Instead here I am
- delighted to enjoy your smiles.
-
-With you by my side,
-I can travel many miles.
-Just keep alive your smiles!
-
-( Hey Dear, My Dear wife!)
-
-I wish you many more happy birthdays ahead!
-Enjoy your birthday.
-
-( Hey Dear, My Dear wife!)
-
-- murali (Nov 2020)
-</pre>
-  <a class="nav-link" share-button
-    href="javascript:useShareHelper( 'Birthday Wishes', null, 'https://zanavu.com/poems#poem_birthday_wishes')">
-    <i class="fas fa-share"></i>
-    Share
-  </a>
-</li>
       </div>
-
-      <div id="poem_towards_light" role="tabpanel" class="tab-pane fade show active">
-<pre>
-  Onwards towards the light
- ——— ——— ——— ——— ——— ——— ———
-
- Let us remember that
-  there are lights to guide us.
-
- In these tough periods,
-  when our bodies tire,
-  when dreams may be on fire,
-  when our minds lag,
-  when our spirits sag,
-  our souls may seem lost,
- Our hopes might also seem lost.
-
- Let us remember that
-  there are lights to guide us.
-
- In these darkest times,
-  We dream of comforting moments.
- In these challenging situations,
-  we have helpful people.
- In these trying times,
-  There are many small lights.
-
- Let us remember that
-  there are lights to guide us.
-
- It is these tough periods
-   that bring the best of
-   compassion and company,
-   to make this a better world!
-
- There is more hope
-   to have of better days to come.
- There is more goodness
-   to share the hope around.
-
- With hope and prayers,
-  Let us continue to dream
-  and toil ahead
-  with lights to guide us!
-
- Let us remember that
-  there are lights to guide us.
-
-  - Murali
-  (On Diwali eve at Nov 13, 2020)
-</pre>
-<a class="nav-link" share-button
-  href="javascript:useShareHelper( 'Onwards Toward Light', null, 'https://zanavu.com/poems#poem_towards_light')">
-  <i class="fas fa-share"></i>
-  Share
-</a>
-      </div>
-
-      <div id="poem_wonder_pack" role="tabpanel" class="tab-pane fade">
-<pre>
-   Wonder Pack
- ——— ——— ——— ———
-
-  First there was a knock,
-    Opened the door wide,
-      to see who comes from outside.
-    There was this smiling girl,
-     pulling something from her sack.
-  There was a nicely wrapped pack.
-
-  What I wonder the pack has?
-    A pack that is well covered;
-    A pack that nicely waited;
-    A pack that had our curiosity peaked;
-    A pack that just has to be opened.
-
-  First there was a knock
-  Then there was a pack.
-
-  What I wonder the pack has?
-    Soon we popped open the pack.
-    We found a few rounds and squares;
-    We found a few whites and greens;
-    We found a few pinks and yellows.
-
-  First there was a knock
-  Then there was a pack.
-
-  What I wonder the pack has?
-    Many items that waited for us.
-    The items invited us to touch and feel;
-    The items invited us to smell and taste;
-    Oh they tasted real good indeed.
-
-  First there was a knock
-  Then there was a pack.
-
-  What I wonder the pack has?
-    All the items walked into many mouths.
-    Some tasted crunchy and sweet;
-    Some tasted buttery and sweet;
-    Some tasted fruity and sweet;
-
-  First there was a knock
-  Then there was a pack.
-
-  What I wonder the pack had?
-    Has now vanished in our mouths.
-    What we got are thanks
-    to the friends who sent
-    these wonderful sweets to us.
-
-  First there was a knock
-  Then there was a pack.
-
-  -murali (Nov 16, 2020)
-</pre>
-<a class="nav-link" share-button
-  href="javascript:useShareHelper( 'Wonder Pack', null, 'https://zanavu.com/poems#poem_wonder_pack')">
-  <i class="fas fa-share"></i>
-  Share
-</a>
-      </div>
-
-    </div>
     </div>
   </div>
 
@@ -358,23 +146,164 @@ Enjoy your birthday.
 <script>
   var globalShareHelper = null;
 
-  $(document).ready( function() {
+/*
+  <li class="nav-item poem-item">
+    <a class="nav-link"
+      role="toggle" data-toggle="tab"
+      href="#poem_towards_light">
+      <div class="header">Towards Lights <br/>(Happy Diwali)</div>
+      <img src="images/TowardsLight_Nov2020.jpg"
+        width=200 height=200
+        alt="Towards Light"/>
+    </a>
+  </li>
+*/
+  function fetchHelper( fetchFrom) {
+    // console.log( "About to fetch from ", fetchFrom);
+    return fetch( fetchFrom)
+      .then( response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let error = new Error( "Error in fetching Items. Status: "
+            + response.status + "; status text: " + response.statustext);
+          error.response = response;
+          throw error;
+        }
+      },
+      error => {
+          let errmess = new Error( error.message);
+          throw errmess;
+      });
+  }
 
+  function fetchItem( item, index)
+  {
+    const itemFrom = getUrlForContent( item);
+    console.log( `Fetching content from ${itemFrom}`);
+    return fetchHelper( itemFrom)
+      .then( response => response.text())
+      .catch( error => {
+        console.log( `ERROR in fetching content from ${itemFrom}`);
+        console.log( error);
+      });
+  }
+
+
+  function genListItem( item, index) {
+    const hrefIdForItem = 'poem_' + item.url;
+
+    return '<li class="nav-item poem-item">'
+            + '<a class="nav-link"'
+            + '  role="toggle" data-toggle="tab"'
+            + '    href="#' + hrefIdForItem + '">'
+            + '    <div class="header">' + item.title + '</div>'
+            + '    <img src="images/' + item.image + '"'
+            + '      width=200 height=200'
+            + '      alt="' + item.title + '"/>'
+            + '  </a>'
+            + '</li>'
+          ;
+  }
+
+  function genContentItem( item, index) {
+    const fullItemContent = "Coming Soon ...";
+    const classForItem = 'tab-pane fade ' + ((index === 0) ? 'show active' : '');
+    const hrefIdForItem = 'poem_' + item.url;
+    const idForPreContent = 'pre_' + item.url;
+    const itemShareUrl = 'javascript:useShareHelper( \''
+      + item.title
+      + '\', null, \'https://zanavu.com/poems#' + hrefIdForItem + '\')';
+
+    // console.log( `Rendering Item.Title: ${item.title}`);
+    // console.log( `Rendering itemShareUrl: ${itemShareUrl}`);
+
+    let itemx =
+      '<div id="' + hrefIdForItem + '" role="tabpanel" class="' + classForItem + '">'
+      + '<h4>' + item.title + '</h4>'
+      + '<div class="poem_text" id="' + idForPreContent + '">'
+      + fullItemContent
+      + '</div>'
+      + '<a class="nav-link" share-button '
+      + '    href="' + itemShareUrl + '">'
+      + ' <i class="fas fa-share"></i>Share</a>'
+      + '</div>'
+      ;
+
+    // queue up fetching the content item and adding to display node
+    fetchItem( item, index)
+      .then( content => {
+        let nodeForContent = $('#' + idForPreContent);
+        // console.log( `content for item at ${idForPreContent} is `, nodeForContent.text());
+        // console.log( `new content is \n ${content}`);
+        nodeForContent.text( content);
+      });
+
+    // console.log( itemx);
+    return itemx;
+  }
+
+  const itemsDirectoryUrl = "/poems/content/_items.json";
+  function getUrlForContent( item) {
+    return "/poems/content/" + item.url + ".txt";
+  }
+
+
+  function FetchSideBarItems() {
+    // console.log( `Fetching sidebar items from ${itemsDirectoryUrl}`);
+    return fetchHelper( itemsDirectoryUrl)
+      .then( response => response.json())
+      .catch( error => {
+        console.log( `ERROR in fetching items from ${itemFrom}`);
+        console.log( error);
+      });
+  }
+
+  function AddDynamicContent( items) {
+    let contentList = $('#main_content');
+    let sidebarList = $('#sidebar_links');
+    // console.log( "About to add main items"); console.log( items);
+    // console.log( rootListToAdd);
+
+    // iterate and add items
+    items.forEach( (item, index) => {
+      // generate list item
+      const contentItem = genContentItem( item, index);
+      const sidebarItem = genListItem( item, index);
+
+      // console.log(`Main Content Item [${index}] is: ${contentItem}`);
+      // console.log(`Sidebar Item [${index}] is: ${sidebarItem}`);
+
+      // add the list item
+      contentList.append( contentItem);
+      // add the list item
+      sidebarList.append( sidebarItem);
+    });
+  }
+
+  function CheckAndEnableSharing() {
     if ( ShareHelper.canShare()) {
       // enable sharing mode ... or else disable it
 
-      console.log( "Setting up the useShareHelper ... ");
+      // console.log( "Setting up the useShareHelper ... ");
       globalShareHelper = new ShareHelper( '#output');
     } else {
       // disable share links
 
-      console.log( "Disable and remove the sharing buttons ... ");
+      // console.log( "Disable and remove the sharing buttons ... ");
       let nodes = $('[share-button]');
       // nodes.remove();  // removal ensures sharing is NOT shown
       nodes.css( 'display', 'none'); // does not show the item
-      console.log( nodes);
+      // console.log( nodes);
     }
+  }
 
+  $(document).ready( function() {
+
+    FetchSideBarItems()
+      .then( items => AddDynamicContent( items))
+      ;
+    CheckAndEnableSharing();
   });
 
   function useShareHelper( title, text, url) {
@@ -385,7 +314,6 @@ Enjoy your birthday.
   }
 </script>
 
-<script src="js/scripts.js"></script>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

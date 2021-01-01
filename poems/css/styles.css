@@ -5,8 +5,19 @@
   --middle-orange: #303080;
   --red-crayola: #ff0054;
 
+  /* color chosen : https://coolors.co/9a031e-f4dc52-ffd5ff-45f0df-172121 */
+  --minion-yellow: #F4DC52;
+  --ruby-red: #9A031E;
+  --pink-lace: #FFD5FF;
+  --turquoise: #45F0DF;
+  --dark-jungle-green: #172121;
+
   --main-color: var(--red-crayola);
+
+  --main-color: green;
   --main-background: rose;
+  --header-background: var(--minion-yellow);
+  --box-border-color: var(--ruby-red);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
@@ -14,12 +25,21 @@ body {
   font-family: Balsamiq Sans;
   padding-top: 90px;
   background-color: var(--cyan);
-  color: var(--black);
+  color: var(--main-color);
+}
+
+.poem_text {
+  color: var(--main-color);
+  display: block;
+  font-family: monospace;
+  white-space: pre;
+  margin: 1em 0;
 }
 
 .st-navbar {
   font-size: 1.4em;
   margin-bottom: 60px;
+  background-color: var(--header-background);
 }
 
 #logo {
@@ -39,11 +59,11 @@ body {
 
 .poem-item {
   font-size: 1.1em;
+  min-height: 300px;
 }
 
 .poem-item .header {
   font-size: 1.1em;
-  margin-top: 20px;
 }
 
 .poem-item .poem-audio {

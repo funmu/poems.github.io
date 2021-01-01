@@ -1,0 +1,33 @@
+[
+  {
+    "title": "Onwards Towards Light",
+    "date" : "Nov 13, 2020",
+    "image": "TowardsLight_Nov2020.jpg",
+    "author": "Murali Krishnan",
+    "url" : "onwards_towards_light"
+  },
+
+  {
+    "title": "Wonder Pack",
+    "date" : "Nov 16, 2020",
+    "image": "WonderPack-Nov2020.jpg",
+    "author": "Murali Krishnan",
+    "url" : "wonder_pack"
+  },
+  {
+    "title": "Birthday Wishes For my Wife",
+    "date" : "Nov 1, 2020",
+    "image": "BirthdayCake-Nov2020.jpg",
+    "author": "Murali Krishnan",
+    "url" : "birthday_wishes_for_my_wife_2020",
+    "audio": "https://soundcloud.com/murali-krishnan-893961838/birthday-song-for-my-wife/s-pw8W4ALWX1L"
+  },
+  {
+    "title": "Fifty and Mighty",
+    "date" : "Nov 19, 2020",
+    "image": "Rose-50th-Anniversary-Fifty-and-Mighty.jpg",
+    "author": "Murali Krishnan",
+    "url" : "fifty_and_mighty",
+    "extras" : "fifty_and_mighty_extras"
+  }
+]
