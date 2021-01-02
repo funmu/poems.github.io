@@ -62,8 +62,13 @@ body {
   min-height: 300px;
 }
 
-.poem-item .header {
+.poem-item .title {
   font-size: 1.1em;
+}
+
+.poem-item .title-date {
+  font-size: 0.8em;
+  font-style: italic;
 }
 
 .poem-item .poem-audio {

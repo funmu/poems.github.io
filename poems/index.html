@@ -197,7 +197,9 @@
             + '<a class="nav-link"'
             + '  role="toggle" data-toggle="tab"'
             + '    href="#' + hrefIdForItem + '">'
-            + '    <div class="header">' + item.title + '</div>'
+            + '    <div class="title">' + item.title
+            + ' <br/> <span class="title-date">( ' + item.date + ')</span>'
+            + '</div>'
             + '    <img src="images/' + item.image + '"'
             + '      width=200 height=200'
             + '      alt="' + item.title + '"/>'
@@ -254,7 +256,7 @@
     return fetchHelper( itemsDirectoryUrl)
       .then( response => response.json())
       .catch( error => {
-        console.log( `ERROR in fetching items from ${itemFrom}`);
+        console.log( `ERROR in fetching items from ${itemsDirectoryUrl}`);
         console.log( error);
       });
   }
