@@ -1,4 +1,4 @@
-# Empty CSS file for your own CSS
+/* Empty CSS file for your own CSS */
 
 :root {
   --dark-sienna: #3c0919;
@@ -15,16 +15,17 @@
   --main-color: var(--red-crayola);
 
   --main-color: green;
-  --main-background: rose;
-  --header-background: var(--minion-yellow);
+  --main-background: var(--minion-yellow); /* rose */
+  --header-background: var(--pink-lace);
   --box-border-color: var(--ruby-red);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
 body {
+
   font-family: Balsamiq Sans;
   padding-top: 90px;
-  background-color: var(--cyan);
+  background-color: var(--minion-yellow);
   color: var(--main-color);
 }
 
@@ -57,9 +58,13 @@ body {
   padding: 50px 10px 50px 10px;
 }
 
+#sidebar_links {
+    max-height: 800px;
+}
+
 .poem-item {
   font-size: 1.1em;
-  min-height: 300px;
+  min-height: 240px;
 }
 
 .poem-item .title {
@@ -76,7 +81,7 @@ body {
   margin-left: 30px;
 }
 
-.poem-item img {
+.poem-item-img {
   height: 160px;
   weight: 160px;
   border-radius: 20%;

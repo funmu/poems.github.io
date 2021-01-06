@@ -22,9 +22,8 @@
 </head>
 <!-- Get the poem text from external file using async methods -->
 
-<body id="root2">
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top st-navbar"
-    style="background-color: wheat;">
+<body id="root">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top st-navbar">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">
@@ -75,7 +74,7 @@
               class="dropdown-menu dropdown-menu-right "
               aria-labelledby="navbarDropdownMenuLink">
 
-              <a class="dropdown-item" href="https://zanavu.com">About Us</a>
+              <a class="dropdown-item" href="https://zanavu.com/notes/a-world-of-possibilities/">About</a>
 
               <div class="dropdown-divider"></div>
 
@@ -91,7 +90,7 @@
 <div class="container">
   <div id="poems" class="jumbotron">
     <div class="row">
-      <div class="col-6 col-sm-4 d-flex justify-content-center">
+      <div class="col-6 col-sm-4 d-flex justify-content-center overflow-auto">
         <ul class="nav nav-pills" id="sidebar_links">
           <!-- the sidebar items will be dynamically added -->
 
@@ -111,13 +110,14 @@
   </div>
 
   <footer>
-    <div className="container">
-      <div className="row justify-content-center">
-          <div className="col-auto">
-            <p>
-              Copyright &copy; 2020  Murali Krishnan
-              <br/>
-            </p>
+    <div class="container">
+      <div class="row">
+          <div class="col-4">
+            <a href="https://www.poetryfoundation.org/poems/poem-of-the-day" target="_blank">
+              <strong>Poem of The Day</strong></a> from Poetry Foundation.
+          </div>
+          <div class="col-4 ml-auto">
+              Copyright &copy; 2020-2021  Murali Krishnan
           </div>
       </div>
     </div>
@@ -143,145 +143,13 @@
 </script>
 
 <script type="module" src="js/ShareHelper.js"></script>
+<script type="module" src="js/FetchPoemsHelper.js"></script>
+
 <script>
   var globalShareHelper = null;
 
-/*
-  <li class="nav-item poem-item">
-    <a class="nav-link"
-      role="toggle" data-toggle="tab"
-      href="#poem_towards_light">
-      <div class="header">Towards Lights <br/>(Happy Diwali)</div>
-      <img src="images/TowardsLight_Nov2020.jpg"
-        width=200 height=200
-        alt="Towards Light"/>
-    </a>
-  </li>
-*/
-  function fetchHelper( fetchFrom) {
-    // console.log( "About to fetch from ", fetchFrom);
-    return fetch( fetchFrom)
-      .then( response => {
-        if (response.ok) {
-          return response;
-        } else {
-          let error = new Error( "Error in fetching Items. Status: "
-            + response.status + "; status text: " + response.statustext);
-          error.response = response;
-          throw error;
-        }
-      },
-      error => {
-          let errmess = new Error( error.message);
-          throw errmess;
-      });
-  }
-
-  function fetchItem( item, index)
-  {
-    const itemFrom = getUrlForContent( item);
-    console.log( `Fetching content from ${itemFrom}`);
-    return fetchHelper( itemFrom)
-      .then( response => response.text())
-      .catch( error => {
-        console.log( `ERROR in fetching content from ${itemFrom}`);
-        console.log( error);
-      });
-  }
-
-
-  function genListItem( item, index) {
-    const hrefIdForItem = 'poem_' + item.url;
-
-    return '<li class="nav-item poem-item">'
-            + '<a class="nav-link"'
-            + '  role="toggle" data-toggle="tab"'
-            + '    href="#' + hrefIdForItem + '">'
-            + '    <div class="title">' + item.title
-            + ' <br/> <span class="title-date">( ' + item.date + ')</span>'
-            + '</div>'
-            + '    <img src="images/' + item.image + '"'
-            + '      width=200 height=200'
-            + '      alt="' + item.title + '"/>'
-            + '  </a>'
-            + '</li>'
-          ;
-  }
-
-  function genContentItem( item, index) {
-    const fullItemContent = "Coming Soon ...";
-    const classForItem = 'tab-pane fade ' + ((index === 0) ? 'show active' : '');
-    const hrefIdForItem = 'poem_' + item.url;
-    const idForPreContent = 'pre_' + item.url;
-    const itemShareUrl = 'javascript:useShareHelper( \''
-      + item.title
-      + '\', null, \'https://zanavu.com/poems#' + hrefIdForItem + '\')';
-
-    // console.log( `Rendering Item.Title: ${item.title}`);
-    // console.log( `Rendering itemShareUrl: ${itemShareUrl}`);
-
-    let itemx =
-      '<div id="' + hrefIdForItem + '" role="tabpanel" class="' + classForItem + '">'
-      + '<h4>' + item.title + '</h4>'
-      + '<div class="poem_text" id="' + idForPreContent + '">'
-      + fullItemContent
-      + '</div>'
-      + '<a class="nav-link" share-button '
-      + '    href="' + itemShareUrl + '">'
-      + ' <i class="fas fa-share"></i>Share</a>'
-      + '</div>'
-      ;
-
-    // queue up fetching the content item and adding to display node
-    fetchItem( item, index)
-      .then( content => {
-        let nodeForContent = $('#' + idForPreContent);
-        // console.log( `content for item at ${idForPreContent} is `, nodeForContent.text());
-        // console.log( `new content is \n ${content}`);
-        nodeForContent.text( content);
-      });
-
-    // console.log( itemx);
-    return itemx;
-  }
-
   const itemsDirectoryUrl = "/poems/content/_items.json";
-  function getUrlForContent( item) {
-    return "/poems/content/" + item.url + ".txt";
-  }
-
-
-  function FetchSideBarItems() {
-    // console.log( `Fetching sidebar items from ${itemsDirectoryUrl}`);
-    return fetchHelper( itemsDirectoryUrl)
-      .then( response => response.json())
-      .catch( error => {
-        console.log( `ERROR in fetching items from ${itemsDirectoryUrl}`);
-        console.log( error);
-      });
-  }
-
-  function AddDynamicContent( items) {
-    let contentList = $('#main_content');
-    let sidebarList = $('#sidebar_links');
-    // console.log( "About to add main items"); console.log( items);
-    // console.log( rootListToAdd);
-
-    // iterate and add items
-    items.forEach( (item, index) => {
-      // generate list item
-      const contentItem = genContentItem( item, index);
-      const sidebarItem = genListItem( item, index);
-
-      // console.log(`Main Content Item [${index}] is: ${contentItem}`);
-      // console.log(`Sidebar Item [${index}] is: ${sidebarItem}`);
-
-      // add the list item
-      contentList.append( contentItem);
-      // add the list item
-      sidebarList.append( sidebarItem);
-    });
-  }
+  const prefixForPoems = "/poems/content/";
 
   function CheckAndEnableSharing() {
     if ( ShareHelper.canShare()) {
@@ -301,10 +169,8 @@
   }
 
   $(document).ready( function() {
-
-    FetchSideBarItems()
-      .then( items => AddDynamicContent( items))
-      ;
+    let fetchPoemsHelper = new FetchPoemsHelper( prefixForPoems, itemsDirectoryUrl);
+    fetchPoemsHelper.FetchAndAddPoems( '#sidebar_links', '#main_content');
     CheckAndEnableSharing();
   });
 
